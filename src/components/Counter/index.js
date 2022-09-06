@@ -6,11 +6,15 @@ class Counter extends Component {
   state = {count: 0}
 
   onDecrement = () => {
-    this.state.count = this.state.count - 1
+    this.setState(previousCounterState => ({
+      count: previousCounterState.count - 1,
+    }))
   }
 
   onIncrement = () => {
-    this.state.count = this.state.count + 1
+    this.setState(previousCounterState => ({
+      count: previousCounterState.count + 1,
+    }))
   }
 
   render() {
@@ -19,10 +23,10 @@ class Counter extends Component {
     return (
       <div className="app-container">
         <h1 className="count">Count {count}</h1>
-        <button className="button" onClick={this.onDecrement()} type="button">
+        <button className="button" onClick={this.onDecrement} type="button">
           Increase
         </button>
-        <button className="button" onClick={this.onIncrement()} type="button">
+        <button className="button" onClick={this.onIncrement} type="button">
           Decrease
         </button>
       </div>
