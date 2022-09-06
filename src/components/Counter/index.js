@@ -6,15 +6,15 @@ class Counter {
   state = {count: 0}
 
   onDecrement = () => {
-    this.state.count = this.state.count - 1;
+    this.state.count = this.state.count - 1
   }
 
   onIncrement = () => {
-    this.state.count = this.state.count + 1;
+    this.state.count = this.state.count + 1
   }
 
   render() {
-    {count} = this.state
+    const {count} = this.state
 
     return (
       <div className="app-container">
